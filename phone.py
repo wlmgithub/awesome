@@ -43,7 +43,17 @@ def gen_letters_for(phone_number):
     # e.g., for 2345557777
     # the iter_str should be:
     #  
-    # itertools.product(['A', 'B', 'C'],['D', 'E', 'F'],['G', 'H', 'I'],['J', 'K', 'L'],['J', 'K', 'L'],['J', 'K', 'L'],['P', 'Q', 'R', 'S'],['P', 'Q', 'R', 'S'],['P', 'Q', 'R', 'S'],['P', 'Q', 'R', 'S'])
+    # itertools.product(
+    #	['A', 'B', 'C'],
+    #	['D', 'E', 'F'],
+    #	['G', 'H', 'I'],
+    #	['J', 'K', 'L'],
+    #	['J', 'K', 'L'],
+    #	['J', 'K', 'L'],
+    #	['P', 'Q', 'R', 'S'],
+    #	['P', 'Q', 'R', 'S'],
+    #	['P', 'Q', 'R', 'S'],
+    #	['P', 'Q', 'R', 'S'])
 
     # TODO: there might be a better way to do without using eval
     iter_letters = eval(iter_str)
@@ -54,11 +64,9 @@ def gen_letters_for(phone_number):
 def test_one_number():
     gen_letters_for('2345557777')
 
-
 def main():
     for phone_number in gen_phone_numbers():
         gen_letters_for(phone_number)
-
 
 if __name__ == '__main__':
 #     test_one_number()
