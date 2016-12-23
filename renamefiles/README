@@ -1,0 +1,10 @@
+
+f1 -> f1
+f2.txt -> f2-v1.txt
+f2-v1.txt -> f2-v1-v1.txt
+f2-v1-v1.txt -> f2-v1-v1-v1.txt
+foo.bar -> foo-v1.bar
+foo.bar.baz -> foo.bar-v1.baz
+.
+.
+.
