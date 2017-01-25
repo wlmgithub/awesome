@@ -1,0 +1,51 @@
+
+import sys
+import time
+
+def usage():
+    sys.stderr.write("""
+usage: <prog> <numer_of_lines> <file>
+
+""")
+    sys.exit()
+
+
+def tailfile(fname):
+    fh = open(fname)
+    fh.seek(0,2)
+    while True:
+        new = fh.readline()
+        if new:
+            print(new.strip())
+        else:
+            time.sleep(1)
+
+    fh.close()
+
+if len(sys.argv) < 3:
+    usage()
+
+dashf = False
+
+if sys.argv[1] == '-f':
+    dashf = True
+else:
+    nLines = int(sys.argv[1])
+
+filename = sys.argv[2]
+
+if not dashf:
+
+    print(sys.argv)
+    print(nLines)
+    print(filename)
+
+    print('-' * 72)
+
+    from collections import deque
+    for i in deque(open(filename), nLines):
+        print(i.strip())
+
+else:
+
+    tailfile(filename)
