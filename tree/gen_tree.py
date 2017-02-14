@@ -25,7 +25,7 @@ print(json.dumps(clone, sort_keys=True, indent=4))
 given_key = 'primary'
 
 
-def check_key(given_tree, give_key):
+def check_key(given_tree, given_key):
   for k in given_tree:
 	if given_key in k:
 		return True
